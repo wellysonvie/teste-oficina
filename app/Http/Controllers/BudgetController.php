@@ -58,4 +58,15 @@ class BudgetController extends Controller
         return redirect()->action('BudgetController@index');
     }
 
+    public function destroy($id)
+    {
+        $budget = Budget::find($id);
+
+        if(!empty($budget)){
+            $budget->delete();
+        }
+
+        return redirect()->action('BudgetController@index');
+    }
+
 }

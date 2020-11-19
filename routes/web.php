@@ -20,3 +20,5 @@ Route::post('/orcamentos/store', 'BudgetController@store');
 
 Route::get('/orcamentos/editar/{id}', 'BudgetController@edit');
 Route::put('/orcamentos/update/{id}', 'BudgetController@update');
+
+Route::get('/orcamentos/remover/{id}', 'BudgetController@destroy');
