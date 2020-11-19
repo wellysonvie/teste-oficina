@@ -14,6 +14,17 @@ class BudgetController extends Controller
         return view('budget.index')->with('budgets', $budgets);
     }
 
+    public function show($id)
+    {
+        $budget = Budget::find($id);
+
+        if(!empty($budget)){
+            return view('budget.show')->with('budget', $budget);
+        }else{
+            return redirect()->action('BudgetController@index');
+        }
+    }
+
     public function create()
     {
         return view('budget.create');
