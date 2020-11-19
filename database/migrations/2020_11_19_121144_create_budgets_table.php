@@ -19,7 +19,6 @@ class CreateBudgetsTable extends Migration
             $table->string('seller');
             $table->text('description');
             $table->float('price', 8, 2);
-            $table->dateTime('budget_at');
             $table->timestamps();
         });
     }
