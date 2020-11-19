@@ -14,3 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'BudgetController@index');
+
+Route::get('/orcamentos/novo', 'BudgetController@create');
+Route::post('/orcamentos/store', 'BudgetController@store');
