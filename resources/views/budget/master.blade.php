@@ -8,22 +8,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Oficina 2.0 | Orçamentos</title>
 
-    <link rel="stylesheet" href="<?= asset('css/app.css'); ?>">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-        <a href="#" class="navbar-brand"><b>Oficina 2.0</b></a>
+        <a href="{{ url('/') }}" class="navbar-brand"><b>Oficina 2.0</b></a>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="<?= url('/'); ?>" class="nav-link">Listar orçamentos</a></li>
-            <li class="nav-item"><a href="<?= url('/orcamento/novo'); ?>" class="nav-link">Cadastrar orçamento</a></li>
+            <li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Listar orçamentos</a></li>
+            <li class="nav-item"><a href="{{ url('/orcamentos/novo') }}" class="nav-link">Cadastrar orçamento</a></li>
         </ul>
     </div>
 </nav>
 
 @yield('content')
 
-<script src="<?= asset('js/app.js') ;?>"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
