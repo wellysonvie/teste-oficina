@@ -28,7 +28,7 @@
                 <input type="text" id="price" name="price" class="form-control" value="{{ $budget->price }}">
             </div>
 
-            <button type="submit" class="btn btn-primary mt-3">Atualizar</button>
+            <button type="submit" class="btn btn-primary mt-3 mb-5">Atualizar</button>
         </form>
     </div>
 

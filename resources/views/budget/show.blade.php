@@ -3,7 +3,7 @@
 @section('content')
     <div class="container my-3">
 
-        <h1 class="mt-5 mb-3">Orçamento</h1>
+        <h1 class="mt-5 mb-5">Orçamento</h1>
 
         @if(!empty($budget))
             <h5><b>Cliente:</b> {{ $budget->client }}</h5>

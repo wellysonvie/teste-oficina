@@ -27,7 +27,7 @@
                 <input type="text" id="price" name="price" class="form-control">
             </div>
 
-            <button type="submit" class="btn btn-primary mt-3">Cadastrar</button>
+            <button type="submit" class="btn btn-primary mt-3 mb-5">Cadastrar</button>
         </form>
     </div>
 

@@ -21,7 +21,7 @@
                         <td>{{ $budget->id }}</td>
                         <td>{{ $budget->client }}</td>
                         <td>{{ $budget->seller }}</td>
-                        <td>{{ $budget->description }}</td>
+                        <td class="d-inline-block text-truncate" style="max-width: 300px;">{{ $budget->description }}</td>
                         <td>R$ {{ number_format($budget->price, 2, ',', '.') }}</td>
                         <td>{{ date_format($budget->created_at, 'd/m/Y H:i') }}</td>
                         <td>
