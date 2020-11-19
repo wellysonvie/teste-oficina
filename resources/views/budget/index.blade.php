@@ -3,7 +3,7 @@
 @section('content')
     <div class="container my-3">
 
-        <h1>Orçamentos</h1>
+        <h1 class="mt-5 mb-3">Orçamentos</h1>
 
         @if (!empty($budgets))
             <table class='table table-striped table-hover'>
@@ -23,11 +23,11 @@
                         <td>{{ $budget->seller }}</td>
                         <td>{{ $budget->description }}</td>
                         <td>R$ {{ number_format($budget->price, 2, ',', '.') }}</td>
-                        <td>{{ $budget->budget_at }}</td>
+                        <td>{{ date_format($budget->created_at, 'd/m/Y H:i') }}</td>
                         <td>
-                            <a href='{{ url('/orcamento/' . $budget->id) }}'>Ver mais</a> |
-                            <a href='{{ url('/orcamento/editar/' . $budget->id) }}'>Editar</a> |
-                            <a href='{{ url('/orcamento/remover/' . $budget->id) }}'>Remover</a>
+                            <a href='{{ url('/orcamentos/' . $budget->id) }}'>Ver mais</a> |
+                            <a href='{{ url('/orcamentos/editar/' . $budget->id) }}'>Editar</a> |
+                            <a href='{{ url('/orcamentos/remover/' . $budget->id) }}'>Remover</a>
                         </td>
                     </tr>
                 @endforeach
