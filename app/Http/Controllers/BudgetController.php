@@ -32,4 +32,30 @@ class BudgetController extends Controller
 
         return redirect()->action('BudgetController@index');
     }
+
+    public function edit($id)
+    {
+        $budget = Budget::find($id);
+
+        if(!empty($budget)){
+            return view('budget.edit')->with('budget', $budget);
+        }else{
+            return redirect()->action('BudgetController@index');
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        $budget = Budget::find($id);
+
+        $budget->client = $request->client;
+        $budget->seller = $request->seller;
+        $budget->description = $request->description;
+        $budget->price = $request->price;
+
+        $budget->save();
+
+        return redirect()->action('BudgetController@index');
+    }
+
 }
