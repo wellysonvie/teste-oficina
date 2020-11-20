@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
     <div class="container">
         <a href="{{ url('/') }}" class="navbar-brand"><b>Oficina 2.0</b></a>
         <ul class="navbar-nav ml-auto">

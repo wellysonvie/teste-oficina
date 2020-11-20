@@ -1,7 +1,7 @@
 @extends('budget.master')
 
 @section('content')
-    <div class="container my-3">
+    <div class="container my-3 mt-5 pt-1">
 
         <h1 class="mt-5 mb-3">Atualizar &middot; Orçamento</h1>
 
