@@ -16,8 +16,8 @@
     <div class="container">
         <a href="{{ url('/') }}" class="navbar-brand"><b>Oficina 2.0</b></a>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Listar orçamentos</a></li>
-            <li class="nav-item"><a href="{{ url('/orcamentos/novo') }}" class="nav-link">Cadastrar orçamento</a></li>
+            <li class="nav-item"><a href="{{ url('/') }}" class="nav-link font-weight-bold">Listar orçamentos</a></li>
+            <li class="nav-item"><a href="{{ url('/orcamentos/novo') }}" class="nav-link font-weight-bold">Cadastrar orçamento</a></li>
         </ul>
     </div>
 </nav>
