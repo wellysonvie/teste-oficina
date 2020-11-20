@@ -12,23 +12,24 @@
 
             <div class="form-group">
                 <label for="client">Cliente</label>
-            <input type="text" id="client" name="client" class="form-control" value="{{ $budget->client }}">
+                <input type="text" id="client" name="client" class="form-control" value="{{ $budget->client }}" required>
             </div>
             <div class="form-group">
                 <label for="seller">Vendedor</label>
-                <input type="text" id="seller" name="seller" class="form-control" value="{{ $budget->seller }}">
+                <input type="text" id="seller" name="seller" class="form-control" value="{{ $budget->seller }}" required>
             </div>
             <div class="form-group">
                 <label for="description">Descrição</label>
-                <textarea name="description" id="description" cols="30" rows="10" class="form-control">{{ $budget->description }}</textarea>
+                <textarea name="description" id="description" cols="30" rows="10" class="form-control" required>{{ $budget->description }}</textarea>
             </div>
 
             <div class="form-group">
                 <label for="price">Preço</label>
-                <input type="text" id="price" name="price" class="form-control" value="{{ $budget->price }}">
+                <input type="text" id="price" name="price" class="form-control" value="{{ number_format($budget->price, 2, ',', '.') }}" required>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-3 mb-5">Atualizar</button>
+            <button type="submit" class="btn btn-primary mt-3 mb-5 mr-sm-2">Atualizar</button>
+            <a class="btn btn-secondary mt-3 mb-5" href="{{ url('/') }}">Voltar</a>
         </form>
     </div>
 

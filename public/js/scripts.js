@@ -1,4 +1,6 @@
 
+$('#price').mask('#.##0,00', {reverse: true});
+
 $('#btn-search-date').on('click', function () {
 
     let url = window.location.href.split('?')[0]

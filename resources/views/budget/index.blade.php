@@ -17,8 +17,7 @@
                 <input class="form-control mr-sm-2" type="date" id="input-initial-date" value="{{ $initialDate }}">
                 <label for="input-final-date">Data final:&nbsp;</label>
                 <input class="form-control mr-sm-2" type="date" id="input-final-date" value="{{ $finalDate }}">
-                <button class="btn btn-outline-primary my-2 my-sm-0 mr-sm-2" id="btn-search-date"
-                    type="button">Filtrar</button>
+                <button class="btn btn-outline-primary my-2 my-sm-0 mr-sm-2" id="btn-search-date" type="button">Filtrar</button>
                 <button class="btn btn-outline-secondary my-2 my-sm-0" id="btn-clear-filters" type="button">Limpar
                     filtros</button>
             </div>
