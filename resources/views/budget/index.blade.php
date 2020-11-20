@@ -5,7 +5,26 @@
 
         <h1 class="mt-5 mb-3">Orçamentos</h1>
 
-        @if (!empty($budgets))
+        <form class="form-inline mt-4 mb-4 d-flex justify-content-between">
+            {{ csrf_field() }}
+            <div class="search-client-seller d-flex justify-content-between">
+                <label for="input-search-name">Nome:&nbsp;</label>
+                <input class="form-control mr-sm-2" type="search" placeholder="Cliente ou vendedor" id="input-search-name"
+                    value="{{ $name }}">
+            </div>
+            <div class="filter-date d-flex justify-content-between">
+                <label for="input-initial-date">Data inicial:&nbsp;</label>
+                <input class="form-control mr-sm-2" type="date" id="input-initial-date" value="{{ $initialDate }}">
+                <label for="input-final-date">Data final:&nbsp;</label>
+                <input class="form-control mr-sm-2" type="date" id="input-final-date" value="{{ $finalDate }}">
+                <button class="btn btn-outline-primary my-2 my-sm-0 mr-sm-2" id="btn-search-date"
+                    type="button">Filtrar</button>
+                <button class="btn btn-outline-secondary my-2 my-sm-0" id="btn-clear-filters" type="button">Limpar
+                    filtros</button>
+            </div>
+        </form>
+
+        @if (!$budgets->isEmpty())
             <table class='table table-striped table-hover'>
                 <thead class='bg-primary text-white'>
                     <td>ID</td>
@@ -21,7 +40,8 @@
                         <td>{{ $budget->id }}</td>
                         <td>{{ $budget->client }}</td>
                         <td>{{ $budget->seller }}</td>
-                        <td class="d-inline-block text-truncate" style="max-width: 300px;">{{ $budget->description }}</td>
+                        <td class="d-inline-block text-truncate" style="max-width: 300px;">{{ $budget->description }}
+                        </td>
                         <td>R$ {{ number_format($budget->price, 2, ',', '.') }}</td>
                         <td>{{ date_format($budget->created_at, 'd/m/Y H:i') }}</td>
                         <td>
@@ -32,7 +52,20 @@
                     </tr>
                 @endforeach
             </table>
+
+            <div class="total-budgets mb-3">
+                <small>Total: {{ $budgets->total() }} | exibindo {{ $budgets->perPage() }} por página</small>
+            </div>
+
+            <div>
+                {{ $budgets->appends(['name' => $name, 'initial_date' => $initialDate, 'final_date' => $finalDate])->links() }}
+            </div>
+        @else
+            <div class="text-center mt-5">
+                <span><b>Nenhum orçamento encontrado!</b></span>
+            </div>
         @endif
 
     </div>
+
 @endsection

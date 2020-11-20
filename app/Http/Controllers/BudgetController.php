@@ -7,11 +7,34 @@ use App\Budget;
 
 class BudgetController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $budgets = Budget::all();
+        $name = $request->name;
+        $initialDate = $request->initial_date;
+        $finalDate = $request->final_date;
 
-        return view('budget.index')->with('budgets', $budgets);
+        if(!empty($name) or !empty($finalDate) or !empty($initialDate)){
+
+            if(empty($finalDate)){
+                $budgets = Budget::where('created_at', '>=', "{$initialDate} 00:00:00");
+            }elseif(empty($initialDate)){
+                $budgets = Budget::where('created_at', '<=', "{$finalDate} 23:59:59");
+            }else{
+                $budgets = Budget::whereBetween('created_at', ["{$initialDate} 00:00:00", "{$finalDate} 23:59:59"]);
+            }
+
+            if(!empty($name)){
+                $budgets = $budgets->where('client', 'like', "%{$name}%")
+                    ->orWhere('seller', 'like', "%{$name}%");
+            }
+
+        }else{
+            $budgets = Budget::orderBy('created_at', 'desc');
+        }
+
+        $budgets = $budgets->orderBy('created_at', 'desc')->paginate(15);
+
+        return view('budget.index')->with(['budgets' => $budgets, 'name' => $name, 'initialDate' => $initialDate, 'finalDate' => $finalDate]);
     }
 
     public function show($id)
