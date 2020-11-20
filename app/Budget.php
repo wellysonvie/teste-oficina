@@ -8,7 +8,7 @@ class Budget extends Model
 {
     protected $table = 'budgets';
 
-    protected $fillable = ['client', 'seller', 'description', 'price'];
+    protected $fillable = ['client', 'seller', 'description', 'price', 'created_at'];
 
     public function getPriceFormatedAttribute() 
     {
