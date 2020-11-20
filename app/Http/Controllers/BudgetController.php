@@ -55,14 +55,14 @@ class BudgetController extends Controller
 
     public function store(Request $request)
     {
-        $budget = [
-            'client' => $request->client,
-            'seller' => $request->seller,
-            'description' => $request->description,
-            'price' => $request->price
-        ];
+        $budget = new Budget();
 
-        Budget::create($budget);
+        $budget->client = $request->client;
+        $budget->seller = $request->seller;
+        $budget->description = $request->description;
+        $budget->price = $request->price;
+
+        $budget->save();
 
         return redirect()->action('BudgetController@index');
     }
