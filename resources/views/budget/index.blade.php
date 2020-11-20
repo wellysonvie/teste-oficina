@@ -5,6 +5,15 @@
 
         <h1 class="mt-5 mb-3">Orçamentos</h1>
 
+        @if(!empty(session('status')))
+            <div class="alert alert-{{ session('status') }} alert-dismissible fade show" role="alert">
+                <strong>{{ session('msg') }}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+
         <form class="form-inline mt-4 mb-4 d-flex justify-content-between">
             {{ csrf_field() }}
             <div class="search-client-seller d-flex justify-content-between">
@@ -17,7 +26,8 @@
                 <input class="form-control mr-sm-2" type="date" id="input-initial-date" value="{{ $initialDate }}">
                 <label for="input-final-date">Data final:&nbsp;</label>
                 <input class="form-control mr-sm-2" type="date" id="input-final-date" value="{{ $finalDate }}">
-                <button class="btn btn-outline-primary my-2 my-sm-0 mr-sm-2" id="btn-search-date" type="button">Filtrar</button>
+                <button class="btn btn-outline-primary my-2 my-sm-0 mr-sm-2" id="btn-search-date"
+                    type="button">Filtrar</button>
                 <button class="btn btn-outline-secondary my-2 my-sm-0" id="btn-clear-filters" type="button">Limpar
                     filtros</button>
             </div>

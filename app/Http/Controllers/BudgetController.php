@@ -64,7 +64,10 @@ class BudgetController extends Controller
 
         $budget->save();
 
-        return redirect()->action('BudgetController@index');
+        return redirect()->action('BudgetController@index')->with([
+            'status' => 'success', 
+            'msg' => 'Orçamento cadastrado com sucesso.'
+        ]);
     }
 
     public function edit($id)
@@ -89,7 +92,10 @@ class BudgetController extends Controller
 
         $budget->save();
 
-        return redirect()->action('BudgetController@index');
+        return redirect()->action('BudgetController@index')->with([
+            'status' => 'success', 
+            'msg' => 'Orçamento atualizado com sucesso.'
+        ]);
     }
 
     public function destroy($id)
@@ -100,7 +106,10 @@ class BudgetController extends Controller
             $budget->delete();
         }
 
-        return redirect()->action('BudgetController@index');
+        return redirect()->action('BudgetController@index')->with([
+            'status' => 'success', 
+            'msg' => 'Orçamento deletado com sucesso.'
+        ]);
     }
 
 }
