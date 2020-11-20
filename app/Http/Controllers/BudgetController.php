@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Budget;
+use App\Http\Requests\StoreBudgetRequest;
 
 class BudgetController extends Controller
 {
@@ -53,8 +54,10 @@ class BudgetController extends Controller
         return view('budget.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreBudgetRequest $request)
     {
+        $request->validated();
+
         $budget = new Budget();
 
         $budget->client = $request->client;
@@ -81,8 +84,10 @@ class BudgetController extends Controller
         }
     }
 
-    public function update(Request $request, $id)
+    public function update(StoreBudgetRequest $request, $id)
     {
+        $request->validated();
+        
         $budget = Budget::find($id);
 
         $budget->client = $request->client;

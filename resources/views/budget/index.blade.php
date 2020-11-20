@@ -5,7 +5,7 @@
 
         <h1 class="mt-5 mb-3">Orçamentos</h1>
 
-        @if(!empty(session('status')))
+        @if (!empty(session('status')))
             <div class="alert alert-{{ session('status') }} alert-dismissible fade show" role="alert">
                 <strong>{{ session('msg') }}</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -15,7 +15,6 @@
         @endif
 
         <form class="form-inline mt-4 mb-4 d-flex justify-content-between">
-            {{ csrf_field() }}
             <div class="search-client-seller d-flex justify-content-between">
                 <label for="input-search-name">Nome:&nbsp;</label>
                 <input class="form-control mr-sm-2" type="search" placeholder="Cliente ou vendedor" id="input-search-name"
