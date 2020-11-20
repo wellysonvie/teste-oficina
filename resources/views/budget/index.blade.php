@@ -41,8 +41,8 @@
                         <td>{{ $budget->seller }}</td>
                         <td class="d-inline-block text-truncate" style="max-width: 300px;">{{ $budget->description }}
                         </td>
-                        <td>R$ {{ number_format($budget->price, 2, ',', '.') }}</td>
-                        <td>{{ date_format($budget->created_at, 'd/m/Y H:i') }}</td>
+                        <td>R$ {{ $budget->price_formated }}</td>
+                        <td>{{ $budget->created_at_formated }}</td>
                         <td>
                             <a href='{{ url('/orcamentos/' . $budget->id) }}'>Ver mais</a> |
                             <a href='{{ url('/orcamentos/editar/' . $budget->id) }}'>Editar</a> |

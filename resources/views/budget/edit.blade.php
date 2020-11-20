@@ -25,7 +25,7 @@
 
             <div class="form-group">
                 <label for="price">Preço</label>
-                <input type="text" id="price" name="price" class="form-control" value="{{ number_format($budget->price, 2, ',', '.') }}" required>
+                <input type="text" id="price" name="price" class="form-control" value="{{ $budget->price_formated }}" required>
             </div>
 
             <button type="submit" class="btn btn-primary mt-3 mb-5 mr-sm-2">Atualizar</button>
