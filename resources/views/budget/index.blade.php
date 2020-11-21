@@ -39,9 +39,9 @@
                     <td>Cliente</td>
                     <td>Vendedor</td>
                     <td>Descrição</td>
-                    <td>Preço</td>
-                    <td>Data</td>
-                    <td>Ações</td>
+                    <td width="120">Preço</td>
+                    <td width="150">Data</td>
+                    <td width="200">Ações</td>
                 </thead>
                 @foreach ($budgets as $budget)
                     <tr>
@@ -55,7 +55,7 @@
                         <td>
                             <a href='{{ url('/orcamentos/' . $budget->id) }}'>Ver mais</a> |
                             <a href='{{ url('/orcamentos/editar/' . $budget->id) }}'>Editar</a> |
-                            <a href='{{ url('/orcamentos/remover/' . $budget->id) }}'>Remover</a>
+                            <a class="text-danger" href='{{ url('/orcamentos/remover/' . $budget->id) }}'>Remover</a>
                         </td>
                     </tr>
                 @endforeach
