@@ -8,7 +8,7 @@
         @if(!empty($budget))
             <h5><b>Cliente:</b> {{ $budget->client }}</h5>
             <h5><b>Vendedor:</b> {{ $budget->seller }}</h5>
-            <h5><b>Descrição:</b><h5> <p>{{  $budget->description  }}</p>
+            <h5><b>Descrição:</b><h5> <p>{!! $budget->description_formated !!}</p>
             <h5><b>Preço:</b> R$ {{ $budget->price_formated }}</h5>
             <hr>
             <small><b>Criado em:</b> {{ $budget->created_at_formated }}</small><br>

@@ -10,6 +10,11 @@ class Budget extends Model
 
     protected $fillable = ['client', 'seller', 'description', 'price', 'created_at'];
 
+    public function getDescriptionFormatedAttribute()
+    {
+        return nl2br(htmlspecialchars($this->description));
+    }
+    
     public function getPriceFormatedAttribute() 
     {
         return number_format($this->price, 2, ',', '.');
