@@ -48,7 +48,8 @@ DB_CONNECTION=sqlite
 
 ### Executando o projeto
 
-- Na raiz do projeto, execute `php artisan serve`
+- Na raiz do projeto, execute `php artisan key:generate` para gerar uma chave da aplicação (apenas uma vez)
+- Em seguida, execute `php artisan serve`
 - Acesse http://127.0.0.1:8000
 
 ### Tecnologias utilizadas
