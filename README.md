@@ -7,13 +7,34 @@ Ferramenta desenvolvida para cadastro de orçamentos de uma oficina.
 #### Clonando o projeto
 
 - `git clone https://github.com/wellysonvie/teste-oficina.git`
+
 #### Instalando as dependências
 - `sudo apt install php7.4`
 - `sudo apt install composer`
 - `sudo apt install php7.4-xml php7.4-mbstring php7.4-sqlite3`
 - `sudo apt install nodejs npm`
 
+Instale as dependências do projeto:
+- Na raiz do projeto, execute `composer install`
+
 #### Criando a base de dados
+
+- Renomeie o arquivo `.env.example` para `.env`:
+    - `mv .env.example .env`
+- No arquivo `.env`, altere as linhas:
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=
+```
+Por
+```
+DB_CONNECTION=sqlite
+```
 
 - Dentro da pasta `database/`, crie um arquivo chamado `database.sqlite`:
     - `cd database/`
@@ -27,7 +48,8 @@ Ferramenta desenvolvida para cadastro de orçamentos de uma oficina.
 
 ### Executando o projeto
 
-- Na raiz do projeto, execute `php artisan serve`
+- Na raiz do projeto, execute `php artisan key:generate` para gerar uma chave da aplicação (apenas uma vez)
+- Em seguida, execute `php artisan serve`
 - Acesse http://127.0.0.1:8000
 
 ### Tecnologias utilizadas
